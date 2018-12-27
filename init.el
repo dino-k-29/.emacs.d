@@ -33,6 +33,9 @@
 
 (require 'better-defaults)
 
+(setq auto-save-file-name-transforms
+                `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
+
 (setq inhibit-splash-screen t
       initial-scratch-message nil
       initial-major-mode 'ruby-mode)
