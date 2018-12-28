@@ -40,6 +40,8 @@
       initial-scratch-message nil
       initial-major-mode 'ruby-mode)
 
+(setq next-line-add-newlines t)
+
 (load-theme 'solarized-dark t)
 
 ;; Show line numbers
