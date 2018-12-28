@@ -61,6 +61,9 @@
 (global-set-key (kbd "s-f") #'helm-projectile-ag)
 (global-set-key (kbd "s-t") #'helm-projectile-find-file-dwim)
 
+;; Allow hash to be entered  
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
 ;; Autoclose paired syntax elements like parens, quotes, etc
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
