@@ -15,7 +15,7 @@
 
 ; list the packages you want
 (setq package-list '(better-defaults
-                     solarized-theme
+                     base16-theme
                      helm
                      helm-projectile
                      helm-ag
@@ -42,7 +42,7 @@
 
 (setq next-line-add-newlines t)
 
-(load-theme 'solarized-dark t)
+(load-theme 'base16-eighties t)
 
 ;; Show line numbers
 (global-linum-mode)
