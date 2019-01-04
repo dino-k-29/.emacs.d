@@ -1,5 +1,3 @@
-(add-to-list 'exec-path "/usr/local/bin/")
-
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
@@ -24,6 +22,7 @@
                      rbenv
                      inf-ruby
                      ruby-test-mode
+                     exec-path-from-shell
                      magit))
 
 ; install the missing packages
@@ -32,6 +31,9 @@
     (package-install package)))
 
 (require 'better-defaults)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (setq auto-save-file-name-transforms
                 `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
