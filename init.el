@@ -22,6 +22,7 @@
                      rbenv
                      inf-ruby
                      ruby-test-mode
+                     rinari
                      exec-path-from-shell
                      magit))
 
@@ -81,6 +82,11 @@
 
 (require 'ruby-test-mode)
 (add-hook 'ruby-mode-hook 'ruby-test-mode)
+
+(require 'rinari)
+(global-rinari-mode)
+(require 'ido)
+(ido-mode t)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
