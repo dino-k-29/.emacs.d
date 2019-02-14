@@ -24,7 +24,8 @@
                      ruby-test-mode
                      rinari
                      exec-path-from-shell
-                     magit))
+                     magit
+                     git-gutter))
 
 ; install the missing packages
 (dolist (package package-list)
