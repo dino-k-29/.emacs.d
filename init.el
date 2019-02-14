@@ -44,6 +44,8 @@
       initial-scratch-message nil
       initial-major-mode 'ruby-mode)
 
+(setq ruby-insert-encoding-magic-comment nil)
+
 (setq next-line-add-newlines t)
 
 (load-theme 'base16-eighties t)
