@@ -22,6 +22,7 @@
                      rbenv
                      inf-ruby
                      ruby-test-mode
+                     rubocop
                      rinari
                      exec-path-from-shell
                      magit
@@ -76,6 +77,8 @@
 (setq seeing-is-believing-prefix "C-.")
 (add-hook 'ruby-mode-hook 'seeing-is-believing)
 (require 'seeing-is-believing)
+
+(add-hook 'ruby-mode-hook #'rubocop-mode)
 
 (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
