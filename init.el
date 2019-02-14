@@ -48,9 +48,6 @@
 
 (load-theme 'base16-eighties t)
 
-;; Show line numbers
-(global-linum-mode)
-
 ;; Typography
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
