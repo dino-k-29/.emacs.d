@@ -90,6 +90,7 @@
 (ido-mode t)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-git-gutter-mode +1)
 
 (add-hook 'compilation-finish-functions
           (lambda (buf strg)
