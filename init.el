@@ -53,10 +53,11 @@
 
 ;; Typography
 (set-face-attribute 'default nil
-                    :family "Source Code Pro"
+                    :family "Menlo"
                     :height 150
                     :weight 'normal
                     :width 'normal)
+(setq-default line-spacing 4)
 
 (require 'helm)
 (require 'helm-projectile)
