@@ -51,6 +51,8 @@
 
 (load-theme 'base16-eighties t)
 
+(setq visible-bell nil)
+
 ;; Typography
 (set-face-attribute 'default nil
                     :family "Menlo"
