@@ -68,7 +68,7 @@
 (require 'helm-ag)
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "s-f") #'helm-projectile-ag)
-(global-set-key (kbd "s-t") #'helm-projectile-find-file-dwim)
+(global-set-key (kbd "s-t") #'helm-projectile-find-file)
 
 ;; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
