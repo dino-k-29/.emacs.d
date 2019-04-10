@@ -25,8 +25,11 @@
                      rubocop
                      rinari
                      exec-path-from-shell
+                     web-mode
+                     auto-complete
                      magit
-                     git-gutter))
+                     git-gutter
+                     rust-mode))
 
 ; install the missing packages
 (dolist (package package-list)
@@ -79,6 +82,22 @@
 (global-rbenv-mode)
 (rbenv-use-global)
 
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
+(ac-config-default)
+(setq web-mode-ac-sources-alist
+  '(("css" . (ac-source-css-property))
+    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+(defun web-mode-indent ()
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-indent-style 2)
+)
+(add-hook 'web-mode-hook  'web-mode-indent)
+(setq-default indent-tabs-mode nil)
+
 (setq seeing-is-believing-prefix "C-.")
 (add-hook 'ruby-mode-hook 'seeing-is-believing)
 (require 'seeing-is-believing)
@@ -112,13 +131,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(git-gutter:hide-gutter t)
  '(package-selected-packages
    (quote
-    (magit solarized-theme seeing-is-believing ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag chruby better-defaults))))
+    (rust-mode magit solarized-theme seeing-is-believing ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:background "#515151" :foreground "#a09f93" :box nil :height 1.2)))))
+ '(mode-line ((t (:background "#515151" :foreground "#a09f93" :box nil)))))
 (put 'downcase-region 'disabled nil)
