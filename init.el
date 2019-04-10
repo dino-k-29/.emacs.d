@@ -43,7 +43,7 @@
 (global-git-gutter+-mode)
 (require 'git-gutter-fringe+)
 
-(setq writeroom-major-modes '(text-mode ruby-mode))
+(setq writeroom-major-modes '(text-mode ruby-mode rust-mode))
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
