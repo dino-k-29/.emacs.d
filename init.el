@@ -28,8 +28,10 @@
                      web-mode
                      auto-complete
                      magit
-                     git-gutter
-                     rust-mode))
+                     git-gutter+
+                     git-gutter-fringe+
+                     rust-mode
+                     writeroom-mode))
 
 ; install the missing packages
 (dolist (package package-list)
@@ -37,6 +39,11 @@
     (package-install package)))
 
 (require 'better-defaults)
+
+(global-git-gutter+-mode)
+(require 'git-gutter-fringe+)
+
+(setq writeroom-major-modes '(text-mode ruby-mode))
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
@@ -116,7 +123,6 @@
 (ido-mode t)
 
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-git-gutter-mode +1)
 
 (add-hook 'compilation-finish-functions
           (lambda (buf strg)
@@ -131,10 +137,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(git-gutter:hide-gutter t)
  '(package-selected-packages
    (quote
-    (rust-mode magit solarized-theme seeing-is-believing ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
+    (writeroom-mode rust-mode magit solarized-theme seeing-is-believing ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
