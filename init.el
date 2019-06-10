@@ -29,7 +29,8 @@
                      git-gutter-fringe+
                      rust-mode
                      writeroom-mode
-                     emojify))
+                     emojify
+                     alchemist))
 
 ; install the missing packages
 (dolist (package package-list)
@@ -121,7 +122,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
+    (alchemist emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
