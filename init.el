@@ -30,7 +30,10 @@
                      rust-mode
                      writeroom-mode
                      emojify
-                     alchemist))
+                     alchemist
+                     smart-mode-line
+                     haml-mode
+                     web-mode))
 
 ; install the missing packages
 (dolist (package package-list)
@@ -38,6 +41,10 @@
     (package-install package)))
 
 (require 'better-defaults)
+
+(sml/setup)
+
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
 (global-git-gutter+-mode)
 (require 'git-gutter-fringe+)
@@ -115,6 +122,12 @@
 (setq css-indent-offset 2)
 (setq js-indent-level 2)
 
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -122,7 +135,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (alchemist emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
+    (web-mode haml-mode smart-mode-line alchemist emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
