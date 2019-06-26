@@ -33,7 +33,8 @@
                      alchemist
                      smart-mode-line
                      haml-mode
-                     web-mode))
+                     web-mode
+                     ace-window))
 
 ; install the missing packages
 (dolist (package package-list)
@@ -137,6 +138,8 @@
       (window-configuration-to-register '_)
       (delete-other-windows))))
 
+(global-set-key (kbd "M-o") 'ace-window)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -144,7 +147,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-mode haml-mode smart-mode-line alchemist emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
+    (ace-window web-mode haml-mode smart-mode-line alchemist emojify writeroom-mode rust-mode magit ruby-test-mode ruby-electric rbenv inf-ruby helm-projectile helm-ag better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
